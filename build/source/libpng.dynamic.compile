@@ -1,0 +1,25 @@
+--dll libpng
+--no-default-source
+--src-c=source/png.c
+--src-c=source/pngerror.c
+--src-c=source/pngget.c
+--src-c=source/pngmem.c
+--src-c=source/pngpread.c
+--src-c=source/pngread.c
+--src-c=source/pngrio.c
+--src-c=source/pngrtran.c
+--src-c=source/pngrutil.c
+--src-c=source/pngset.c
+--src-c=source/pngtrans.c
+--src-c=source/pngwio.c
+--src-c=source/pngwrite.c
+--src-c=source/pngwtran.c
+--src-c=source/pngwutil.c
+--src-rc=source/scripts/pngwin.rc
+--install-include-direct
+--def-file=build/source/symbols.def
+--install-project=libpng
+--install-dev
+--no-version
+--dependency-license=zlib
+--use-project=libz

@@ -1,0 +1,9 @@
+--exe pngtest
+--no-default-source
+--src-c=source/pngtest.c
+--use-lib=:libpng.static
+--install-project=libpng
+--install-dev
+--no-version
+--dependency-license=zlib
+--use-project=libz.static

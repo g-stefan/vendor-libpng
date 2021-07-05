@@ -1,0 +1,57 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vendor-civetweb
+Upstream-Contact: Grigore Stefan <g_stefan@yahoo.com>
+Source: https://github.com/g-stefan/vendor-civetweb
+License: MIT
+
+Files: .github/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: .github/CODE_OF_CONDUCT.md
+Copyright: 2014 Coraline Ada Ehmke <https://where.coraline.codes/>
+License: CC-BY-4.0
+
+Files: .gitignore
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: .vscode/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: mkdocs.yml
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: build/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: build.cmd
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: build.sh
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: README.md
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: MIT
+
+Files: archive/* source/* output/* temp/*
+Copyright: Copyright (c) 1995-2019 The PNG Reference Library Authors.
+	Copyright (c) 2018-2019 Cosmin Truta.
+	Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson.
+	Copyright (c) 1996-1997 Andreas Dilger.
+	Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+License: libpng-2.0
+
+Files: test/*
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
+
+Files: version.ini version.txt
+Copyright: 2020-2021 Grigore Stefan <g_stefan@yahoo.com>
+License: Unlicense
