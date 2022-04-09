@@ -28,6 +28,6 @@ if not exist %VENDOR%.tar.gz curl --insecure --location %WEB_LINK% --output %VEN
 7z x %VENDOR%.tar.gz -so | 7z x -aoa -si -ttar -o.
 del /F /Q %VENDOR%.tar.gz
 if exist %VENDOR%.7z del /F /Q %VENDOR%.7z
-7zr a -mx9 -mmt4 -r- -sse -w. -y -t7z %VENDOR%.7z %VENDOR%
+7z a -mx9 -mmt4 -r- -sse -w. -y -t7z %VENDOR%.7z %VENDOR%
 rmdir /Q /S %VENDOR%
 popd
