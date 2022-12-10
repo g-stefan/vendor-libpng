@@ -16,6 +16,8 @@ Shell.mkdirRecursivelyIfNotExists("output/include");
 Shell.mkdirRecursivelyIfNotExists("output/lib");
 Shell.mkdirRecursivelyIfNotExists("temp");
 
+Shell.copyFile("source/scripts/pnglibconf.h.prebuilt","source/pnglibconf.h");
+
 Shell.mkdirRecursivelyIfNotExists("output/include");
 Shell.copyFile("source/pngconf.h", "output/include/pngconf.h");
 Shell.copyFile("source/pnglibconf.h", "output/include/pnglibconf.h");
@@ -23,7 +25,7 @@ Shell.copyFile("source/png.h", "output/include/png.h");
 Shell.copyFile("source/pnginfo.h", "output/include/pnginfo.h");
 Shell.copyFile("source/pngstruct.h", "output/include/pngstruct.h");
 
-Shell.copyFile("source/scripts/pnglibconf.h.prebuilt","source/pnglibconf.h");
+
 
 global.xyoCCExtra = function() {
 	arguments.push(
