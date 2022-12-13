@@ -1,7 +1,7 @@
 {
 	"project": {
 		"name" : "libpng",
-		"type" : "xyo-vendor",
+		"type" : "xyo-cpp",
 		"SPDX-License-Identifier": "libpng-2.0",
 		"sourceLink" : "http://www.libpng.org/pub/png/libpng.html",
 		"version" : "1.6.37"
