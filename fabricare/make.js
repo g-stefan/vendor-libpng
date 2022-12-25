@@ -67,7 +67,7 @@ var compileProject = {
 		"source/pngwtran.c",
 		"source/pngwutil.c"
 	],
-	"linkerDefinitionsFile" : "fabricare/symbols.def",
+	"linkerDefinitionsFile" : "fabricare/source/symbols.def",
 	"resources" : {
 		"includePath" : [ "source" ],
 		"rcSource" : [ "source/scripts/pngwin.rc" ]
