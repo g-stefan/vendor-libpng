@@ -26,7 +26,7 @@ Shell.removeFile("archive/" + Project.vendor + ".7z");
 
 // Source
 runInPath("archive", function() {
-	webLink = "https://sourceforge.net/projects/libpng/files/libpng16/1.6.37/libpng-1.6.37.tar.gz/download";
+	webLink = "https://sourceforge.net/projects/libpng/files/libpng16/1.6.39/libpng-1.6.39.tar.gz/download";
 	if (!Shell.fileExists(Project.vendor + ".zip")) {
 		exitIf(Shell.system("curl --insecure --location " + webLink + " --output " + Project.vendor + ".tar.gz"));
 	};
