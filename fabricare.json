@@ -1,13 +1,18 @@
 {
-	"project": {
-		"name" : "libpng",
+	"solution": {
+		"name" : "vendor-libpng",
 		"type" : "xyo-cpp",
-		"SPDX-License-Identifier": "libpng-2.0",
-		"sourceLink" : "http://www.libpng.org/pub/png/libpng.html",
-		"version" : "1.6.39",
-		"hasRelease" : true,
-		"noVersion" : true,
-		"githubRelease" : true,
-		"githubRepository" : "vendor-libpng"
+		"projects": [
+			{
+				"name" : "libpng",
+				"SPDX-License-Identifier": "libpng-2.0",
+				"sourceLink" : "http://www.libpng.org/pub/png/libpng.html",
+				"version" : "1.6.39",
+				"noVersion" : true
+			}
+		],
+		"releaseName" : "libpng",
+		"hasGithub" : true
 	}
 }
+
