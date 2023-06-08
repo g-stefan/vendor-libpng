@@ -11,8 +11,7 @@
 				"noVersion" : true
 			}
 		],
-		"releaseName" : "libpng",
-		"hasGithub" : true
+		"releaseName" : "libpng"
 	}
 }
 
