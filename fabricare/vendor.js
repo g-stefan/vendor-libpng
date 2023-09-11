@@ -11,7 +11,7 @@ Shell.mkdirRecursivelyIfNotExists("archive");
 
 // Self
 if (Shell.fileExists("archive/" + Project.vendor + ".7z")) {
-	if (Shell.getFileSize("archive/" + Project.vendor + ".7z") > 16) {
+	if (Shell.getFileSize("archive/" + Project.vendor + ".7z") > 16*1024) {
 		return;
 	};
 	Shell.removeFile("archive/" + Project.vendor + ".7z");
@@ -23,14 +23,15 @@ if (Shell.hasEnv("VENDOR_SOURCE_GIT")) {
 };
 
 exitIf(Shell.system("curl --insecure --location " + vendorSourceGit + "/vendor-" + Project.name + "/releases/download/v" + Project.version + "/" + Project.vendor + ".7z --output archive/" + Project.vendor + ".7z"));
-if (Shell.getFileSize("archive/" + Project.vendor + ".7z") > 16) {
+if (Shell.getFileSize("archive/" + Project.vendor + ".7z") > 16*1024) {
 	return;
 };
 Shell.removeFile("archive/" + Project.vendor + ".7z");
 
 // Source
 runInPath("archive", function() {
-	webLink = "https://sourceforge.net/projects/libpng/files/libpng16/1.6.39/libpng-1.6.39.tar.gz/download";
+	webLink = "https://sourceforge.net/projects/libpng/files/libpng16/" + Project.version + "/libpng-" + Project.version + ".tar.gz/download";
+	Console.writeLn(webLink);
 	if (!Shell.fileExists(Project.vendor + ".zip")) {
 		exitIf(Shell.system("curl --insecure --location " + webLink + " --output " + Project.vendor + ".tar.gz"));
 	};
