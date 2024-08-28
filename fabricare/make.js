@@ -18,7 +18,7 @@ Shell.mkdirRecursivelyIfNotExists("output/include");
 Shell.mkdirRecursivelyIfNotExists("output/lib");
 Shell.mkdirRecursivelyIfNotExists("temp");
 
-Shell.copyFile("source/scripts/pnglibconf.h.prebuilt","source/pnglibconf.h");
+Shell.copyFile("source/scripts/pnglibconf.h.prebuilt", "source/pnglibconf.h");
 
 Shell.mkdirRecursivelyIfNotExists("output/include");
 Shell.copyFile("source/pngconf.h", "output/include/pngconf.h");
@@ -29,28 +29,28 @@ Shell.copyFile("source/pngstruct.h", "output/include/pngstruct.h");
 
 
 
-global.xyoCCExtra = function() {
+global.xyoCCExtra = function () {
 	arguments.push(
 
-	    "--inc=output/include",
-	    "--use-lib-path=output/lib",
-	    "--rc-inc=output/include",
+		"--inc=output/include",
+		"--use-lib-path=output/lib",
+		"--rc-inc=output/include",
 
-	    "--inc=" + pathRepository + "/include",
-	    "--use-lib-path=" + pathRepository + "/lib",
-	    "--rc-inc=" + pathRepository + "/include"
+		"--inc=" + pathRepository + "/include",
+		"--use-lib-path=" + pathRepository + "/lib",
+		"--rc-inc=" + pathRepository + "/include"
 
 	);
 	return arguments;
 };
 
 var compileProject = {
-	"project" : "libpng",
-	"includePath" : [
+	"project": "libpng",
+	"includePath": [
 		"output/include",
 		"source",
 	],
-	"cSource" : [
+	"cSource": [
 		"source/png.c",
 		"source/pngerror.c",
 		"source/pngget.c",
@@ -67,30 +67,34 @@ var compileProject = {
 		"source/pngwtran.c",
 		"source/pngwutil.c"
 	],
-	"linkerDefinitionsFile" : "fabricare/source/symbols.def",
-	"resources" : {
-		"includePath" : [ "source" ],
-		"rcSource" : [ "source/scripts/pngwin.rc" ]
+	"linkerDefinitionsFile": "fabricare/source/symbols.def",
+	"resources": {
+		"includePath": ["source"],
+		"rcSource": ["source/scripts/pngwin.rc"]
 	},
-	"library" : [ "libz" ]
+	"library": ["libz"]
 };
 
 Shell.filePutContents("temp/" + compileProject.project + ".compile.json", JSON.encodeWithIndentation(compileProject));
-exitIf(xyoCC.apply(null, xyoCCExtra("@temp/" + compileProject.project + ".compile.json", "--lib", "--output-lib-path=output/lib", "--crt-static")));
-exitIf(xyoCC.apply(null, xyoCCExtra("@temp/" + compileProject.project + ".compile.json", "--dll", "--output-bin-path=output/bin", "--output-lib-path=output/lib")));
+if (Fabricare.isStatic()) {
+	exitIf(xyoCC.apply(null, xyoCCExtra("@temp/" + compileProject.project + ".compile.json", "--lib", "--output-lib-path=output/lib")));
+};
+if (Fabricare.isDynamic()) {
+	exitIf(xyoCC.apply(null, xyoCCExtra("@temp/" + compileProject.project + ".compile.json", "--dll", "--output-bin-path=output/bin", "--output-lib-path=output/lib")));
+};
 
 var compileProject = {
-	"project" : "pngtest",
-	"includePath" : [
+	"project": "pngtest",
+	"includePath": [
 		"output/include",
 		"source"
 	],
-	"cSource" : [ "source/pngtest.c" ],
-	"library" : [
-		"libpng.static",
-		"libz.static"
+	"cSource": ["source/pngtest.c"],
+	"library": [
+		"libpng",
+		"libz"
 	]
 };
 
 Shell.filePutContents("temp/" + compileProject.project + ".compile.json", JSON.encodeWithIndentation(compileProject));
-exitIf(xyoCC.apply(null, xyoCCExtra("@temp/" + compileProject.project + ".compile.json", "--exe", "--output-bin-path=output/bin", "--crt-static")));
+exitIf(xyoCC.apply(null, xyoCCExtra("@temp/" + compileProject.project + ".compile.json", "--exe", "--output-bin-path=output/bin")));
