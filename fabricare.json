@@ -1,6 +1,5 @@
 {
 	"solution": {
-		"namespace" : "xyo",
 		"name" : "vendor-libpng",
 		"type" : "xyo-cpp",
 		"projects": [
